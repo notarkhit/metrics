@@ -19,8 +19,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}               # Your PAT stored as a secret
           plugin_languages: yes                             # Display top languages
           plugin_achievements: yes                          # Display GitHub achievements
-          plugin_achievements_only: >-                      # Display this plugins only
-            polyglot, member, developer
+          plugin_achievements_only: polyglot, member, developer # Display this plugins only
           plugin_streaks: yes                               # Display commit streaks
           plugin_activity: yes                              # Display recent activity
           plugin_isocalendar: yes                           # Display a contribution heatmap
