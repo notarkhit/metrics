@@ -17,6 +17,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}               # Your PAT stored as a secret
+          base: ""
           plugin_languages: yes                             # Display top languages
           plugin_achievements: yes                          # Display GitHub achievements
           plugin_achievements_only: polyglot, member, developer # Display this plugins only
@@ -24,3 +25,5 @@ jobs:
           plugin_activity: yes                              # Display recent activity
           plugin_isocalendar: yes                           # Display a contribution heatmap
           plugin_isocalendar_duration: full-year            # Display the full-year contribution heatmap
+          config_debug: yes
+          
