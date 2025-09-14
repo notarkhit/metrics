@@ -21,9 +21,9 @@ jobs:
           plugin_languages: yes                             # Display top languages
           plugin_achievements: yes                          # Display GitHub achievements
           plugin_achievements_only: polyglot, member, developer # Display this plugins only
-          plugin_streaks: yes                               # Display commit streaks
+          # plugin_streaks: yes                               # Display commit streaks
           plugin_activity: yes                              # Display recent activity
           plugin_isocalendar: yes                           # Display a contribution heatmap
           plugin_isocalendar_duration: full-year            # Display the full-year contribution heatmap
-          config_debug: yes
+          # config_debug: yes
           
