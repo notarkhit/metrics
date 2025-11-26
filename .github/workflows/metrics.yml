@@ -1,29 +1,32 @@
-
-name: Generate Metrics
+name: Metrics
 
 on:
+  # Schedule daily updates
   schedule:
-    - cron: "0 0 * * *" # Run daily
-  workflow_dispatch: # Allow manual triggering
+    - cron: "0 0 * * *"
+  # (optional) Run workflow manually
+  workflow_dispatch:
 
 jobs:
-  build:
+  github-metrics:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    environment:
+      name: production
+    permissions:
+      contents: write
 
+    steps:
       - name: Generate Metrics
         uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.METRICS_TOKEN }}               # Your PAT stored as a secret
+          token: ${{ secrets.METRICS_TOKEN }}
+
           base: ""
-          plugin_languages: yes                             # Display top languages
-          plugin_achievements: yes                          # Display GitHub achievements
-          plugin_achievements_only: polyglot, member, developer # Display this plugins only
-          # plugin_streaks: yes                               # Display commit streaks
-          plugin_activity: yes                              # Display recent activity
-          plugin_isocalendar: yes                           # Display a contribution heatmap
-          plugin_isocalendar_duration: full-year            # Display the full-year contribution heatmap
+          plugin_languages: yes
+          plugin_achievements: yes
+          plugin_achievements_only: polyglot, member, developer
+          plugin_activity: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          # plugin_streaks: yes
           # config_debug: yes
-          
